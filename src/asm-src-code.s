@@ -1,11 +1,7 @@
-            TTL Program Title for Listing Header Goes Here
+           TTL A/D Conversions
 ;****************************************************************
-;Descriptive comment header goes here.
-;(What does the program do?)
-;Name:  <Your name here>
-;Date:  <Date completed here>
-;Class:  CMPE-250
-;Section:  <Your lab section, day, and time here>
+;Name:  Helena Lynd
+;Date:  11/18/22
 ;---------------------------------------------------------------
 ;Keil Template for KL05 Assembly with Keil C startup
 ;R. W. Melton
