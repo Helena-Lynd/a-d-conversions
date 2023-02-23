@@ -4,7 +4,7 @@ A mixed assembly and C program that generates an analog servo position and conve
 ![ProgramResults](https://github.com/Helena-Lynd/a-d-conversions/blob/main/program-output.png?raw=true)
 
 ## Description<br>
-Analog positions descibe the physical location that a servo needs to be moved to (e.g. "1" could be the left side of a piece of paper and "5" could be the right side), however you can't tell a microcontroller to "move to 5". That analog value must be converted into a digital value, which corresponds to the analog value in a way that is meaningful to the microcontroller. This program converts user-input analog values to these new digital values.
+Analog positions descibe the physical location that a servo needs to be moved to (e.g. "1" could be the left side of a piece of paper and "5" could be the right side), however you can't tell a microcontroller to "move to 5". That analog value must be converted into a digital value, which corresponds to the analog value in a way that is meaningful to the microcontroller. This program converts user-input analog values to these new digital values. The program also converts these digital values back to the analog value to check for correct conversions.
 ## Getting Started<br>
 ### Dependencies
 - A method to compile the source files into an executable (e.g. Keil uVision5)
