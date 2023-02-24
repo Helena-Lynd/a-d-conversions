@@ -1,9 +1,9 @@
 /*********************************************************************/
-/* <Your program description here>                                   */
-/* Name:  <Your name here>                                           */
-/* Date:  <Date completed>                                           */
-/* Class:  CMPE 250                                                  */
-/* Section:  <Your section here>                                     */
+/* A mixed assembly and C program that generates an analog servo     */
+/* position and converts it to a digital number to set the position  */
+/* of the servo.                                                     */
+/* Name:  Helena Lynd                                                */
+/* Date:  11/18/22                                                   */
 /*-------------------------------------------------------------------*/
 /* Template:  R. W. Melton                                           */
 /*            March 30, 2018                                         */
@@ -17,7 +17,6 @@
 #define MAX_STRING (79)
 
 #define PWM_FREQ        (50u)
-/* #define TPM_SOURCE_FREQ (48000000u) */
 #define TPM_SOURCE_FREQ (47972352u)
 
 /* ADC0 */
@@ -365,9 +364,9 @@ int main (void) {
 		PutChar(0x0A);
 		
 		/* Get digital value from ADC0 */
-		ADC0->SC1[0] = ADC0_SC1_SGL_DAC0;    					//Start conversion
-		while (!(ADC0->SC1[0] & ADC_SC1_COCO_MASK));	//Wait for conversion to complete
-		UInt16 adcVal = ADC0->R[0];										//Read digital value
+		ADC0->SC1[0] = ADC0_SC1_SGL_DAC0;    				//Start conversion
+		while (!(ADC0->SC1[0] & ADC_SC1_COCO_MASK));			//Wait for conversion to complete
+		UInt16 adcVal = ADC0->R[0];					//Read digital value
 		
 		/* Output message */
 		PutStringSB("\t       New digital value: 0x", MAX_STRING);
@@ -376,12 +375,12 @@ int main (void) {
 		PutChar(0x0A);
 		
 		/* Calculate "Analog" servo position */
-		UInt8 analogPos = adcVal * 5 / 1024;						//Scale 10-bit value to 3-bit value (between 0-4)    1024 / 256 = 4, can represent numbers 0-4
-		analogPos += 1;														//Add 1
+		UInt8 analogPos = adcVal * 5 / 1024;				//Scale 10-bit value to 3-bit value (between 0-4)    1024 / 256 = 4, can represent numbers 0-4
+		analogPos += 1;							//Add 1
 		
 		/* Output message */
 		PutStringSB("\t   Analog servo position: ", MAX_STRING);
-		analogPos += 0x30;												//Convert value to ASCII code
+		analogPos += 0x30;						//Convert value to ASCII code
 		PutChar(analogPos);
 		PutChar(0x0D);
 		PutChar(0x0A);
