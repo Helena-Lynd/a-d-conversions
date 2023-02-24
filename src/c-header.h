@@ -1,5 +1,4 @@
 /*********************************************************************/
-/* Lab Exercise Eleven                                               */
 /* Adjusts a servo to one of five positions [1, 5] using  mixed C    */
 /* and assembly language.  Prompts user to enter a number from 1 to  */
 /* 5, generates a voltage in the range (0, 3.3] V proportional to    */
@@ -8,8 +7,6 @@
 /* bit digital value.                                                */
 /* Name:  R. W. Melton                                               */
 /* Date:  November 7, 2022                                           */
-/* Class:  CMPE 250                                                  */
-/* Section:  All sections                                            */
 /*********************************************************************/
 
 #define EXERCISE_11_C (1)
