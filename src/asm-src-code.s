@@ -391,9 +391,9 @@ Init_UART0_IRQ	PROC	{R0-R13}
 			LTORG
 ;****************************************************************
 UART0_IRQHandler
-UART0_ISR	PROC	{}
+UART0_ISR	PROC	{R0-R13}
 ;****************************************************************
-; 
+; Handler for when an interrupt is received from the UART0
 ; Input
 ;	None
 ; Output
